@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginPage from './components/login';
+import MainLogin from './components/mainLogin';
 // import logo from './logo.svg';
 import './style/main.scss';
 import { PrimaryButton } from 'office-ui-fabric-react';
@@ -21,7 +21,7 @@ const App: React.FC = () => {
           Learn React
         </a>
       </header> */}
-      <LoginPage/>
+      <MainLogin/>
       
     </div>
   );
