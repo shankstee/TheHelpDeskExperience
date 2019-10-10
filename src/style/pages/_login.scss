@@ -1,0 +1,56 @@
+
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+body {
+    background-color: #faf9f8;
+}
+
+.mainDiv {
+    @include flexCenter();
+    flex-direction: column;
+
+    h1 {
+        color: $textGray;
+        font-family: $mainFont;
+        // text-decoration: underline;
+        margin-bottom: 2px;
+    }
+}
+
+.buttonDiv {
+    display: flex;
+    padding: 8px;
+    width: 40vw;
+
+    
+
+    button {
+        width: 50vw;
+        margin: 7px;
+        
+        
+    }
+
+}
+
+#signUpButton {
+    background-color:$darkPurple;
+        
+    &:hover {
+        opacity:0.7;
+    }
+}
+
+
+#loginButton {
+    background-color:$lightPurple;
+    &:hover {
+        background-color: $hoverColor;
+    }
+}
