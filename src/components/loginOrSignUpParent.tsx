@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { DefaultButton, PrimaryButton, Stack, IStackTokens } from 'office-ui-fabric-react';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
-import LoginForm from "./loginForm";
-import SignUpForm from "./signUpForm";
+import LoginOrSignUpForm from "./loginOrSignUpForm";
+// import SignUpForm from "./signUpForm";
 
 
 const LoginPage: React.FC = (props) => {
 
     const [signUpBoolean, setSignUp] = useState<boolean>(false);
     const [loginBoolean, setLogin] = useState<boolean>(false);
+    
 
 
 
@@ -16,9 +17,9 @@ const LoginPage: React.FC = (props) => {
         <div className="mainDiv">
             {
                 signUpBoolean 
-                ? <SignUpForm buttonText={"Sign Up"}/> 
+                ? <LoginOrSignUpForm buttonText={"Sign Up"} /> 
                 : loginBoolean 
-                ? <LoginForm buttonText={"Login"}/> 
+                ? <LoginOrSignUpForm buttonText={"Login"}/> 
                 :  <div>
                         <h1>Welcome to Help Desk App</h1>
                         <div className="buttonDiv">

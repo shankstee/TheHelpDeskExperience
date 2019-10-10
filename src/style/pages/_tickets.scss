@@ -1,0 +1,33 @@
+.flexInputs {
+    @include flexInputRow;
+    width: 45vw;
+        div {
+            // margin-right: 10px;
+            width: 100%;
+
+            &:first-child {
+                margin-right: 5px;
+            }
+
+            input {
+                // width: 100%;
+            }
+        }
+}
+
+.submitTicket {
+    width: 10vw;
+    background-color:$darkPurple;
+        
+    &:hover {
+        background-color: $hoverColor;;
+    }
+}
+
+div.ticketButtonDiv {
+    margin-top: 7px !important;
+}
+
+.root-61 {
+    margin-left: 5px;
+}

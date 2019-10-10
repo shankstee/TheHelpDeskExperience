@@ -1,25 +1,23 @@
 import React, { useState } from 'react';
-import { DefaultButton, PrimaryButton, TextField, Stack, initializeIcons } from 'office-ui-fabric-react';
+import { DefaultButton, PrimaryButton, TextField, Stack, initializeIcons, ITextFieldProps } from 'office-ui-fabric-react';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 initializeIcons();
 
 // interface ILoginProps  {
 
 // }
-export interface ILoginProps  {
+interface ISignInOrLogin  {
     buttonText: string;
-
+    // handleChange: (event: React.FormEvent<HTMLInputElement>) => void;
 }
 
 
 
-const SignUpForm: React.FC<ILoginProps> = (props) => {
+const SignUpForm: React.FC<ISignInOrLogin> = (props) => {
 
-    // const [signUp, setSignUp] = useState<boolean>(false);
-    // const [login, setLogin] = useState<boolean>(false);
-    
-
-
+    const [userEmail, setEmail] = useState<string>("");
+    const [userPassword, setPassword] = useState<string>("");
+    // const emailInputRef = useRef<HTMLInputElement>(null);
 
     return (
         <div>
@@ -30,13 +28,14 @@ const SignUpForm: React.FC<ILoginProps> = (props) => {
                         label="E-mail"
                         description="Please provide a valid E-mail"
                         iconProps={{ iconName: 'NewMail' }}
+                        // ref={emailInputRef}
+                        // onChange={}
                         // onRenderDescription={this._onRenderDescription}
                     />
                     <TextField
                         className="loginOrSignUpInput"
                         label="Password"
                         description="Password must be 6-10 characters long & contain one capitol letter"
-                        // onRenderDescription={this._onRenderDescription}
                         iconProps={{ iconName: 'AuthenticatorApp' }}
                     />
                     <div className="submitButtonDiv">
