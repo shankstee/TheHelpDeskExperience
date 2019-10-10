@@ -34,6 +34,7 @@ body {
     button {
         width: 50vw;
         margin: 7px;
+        font-weight: bold;
         
         
     }
@@ -55,3 +56,27 @@ body {
         background-color: $hoverColor;
     }
 }
+
+// SIGN UP COMPONENT STYLES
+#submitSignUp {
+    width: 9vw;
+    background-color:$darkPurple;
+        
+    &:hover {
+        opacity:0.7;
+    }
+}
+
+.loginOrSignUpInput {
+    width: 25vw;
+    margin-bottom: 11px;
+}
+
+
+
+// .submitButtonDiv {
+//     display: flex;
+//     justify-content: center;
+// }
+
+
