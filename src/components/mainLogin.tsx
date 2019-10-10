@@ -1,5 +1,6 @@
 import * as React from "react";
-import LoginOrSignUp from "./loginOrSignUp";
+import LoginOrSignUp from "./loginOrSignUpParent";
+import CreateOrUpdateTicketForm from "./createOrUpdateTicketForm";
 
 // export interface IUser {
 //     email: string;
@@ -24,7 +25,8 @@ export default class MainLoginForm extends React.Component {
     public render() {
         return (
             <div>
-                <LoginOrSignUp/>
+                <CreateOrUpdateTicketForm/>
+                {/* <LoginOrSignUp/> */}
             </div>
         )
 
