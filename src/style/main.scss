@@ -4,16 +4,24 @@ $lightPurple:#F4F4FC;
 $textGray: #484644;
 $mainFont: 'Microsoft Sans Serif';
 $hoverColor: rgb(209, 209, 236);
+$backgroundColor: #faf9f8;
+$textShadow: -.5px 0 black, 0 .5px $textGray, .5px 0 black, 0 -.5px black;
 
 * {margin:0;padding:0;}
 
 body {
-    background-color: #faf9f8;
+    background-color: $backgroundColor;
 }
 
 form {
-    border: solid $textGray 2px;
+    border: solid $textGray 1px;
     padding: 10px;
+    h1{
+        text-align: center;
+        margin-bottom: 7px;
+        color: $textGray;
+    }
+    
 }
 
 //Toggle account type style
@@ -24,12 +32,41 @@ form {
     }
 }
 
+i {
+    color: $darkPurple !important;
+    // background: $darkPurple;
+}
+#navbarDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $darkPurple;
+    height: 4vh;
+    border-bottom: .1vh solid $textGray;
+    color: $backgroundColor;
+    h3{
+        margin-left: 1vw;
+        text-shadow: $textShadow;
+        font-family: $mainFont;
+    }
+
+    h4 {
+        margin-right: 1vw;
+        text-shadow: $textShadow;
+    }
+    
+    
+}
+.link-71::after {
+    border-left: $darkPurple solid 2px;
+}
+
 
 @mixin flexCenter {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 95.9vh;
 }
 
 @mixin flexInputRow {
