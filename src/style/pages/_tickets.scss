@@ -20,16 +20,24 @@
 }
 
 .submitTicket {
-    width: 10vw;
+    
     background-color:$darkPurple;
         
     &:hover {
         background-color: $hoverColor;;
     }
+    
 }
 
 div.ticketButtonDiv {
     margin-top: 7px !important;
+}
+
+.ticketCard {
+    max-width: 20vw;
+    max-height: 25vh;
+    min-width: 20vw;
+    min-height: 20vh;
 }
 
 .root-61 {
