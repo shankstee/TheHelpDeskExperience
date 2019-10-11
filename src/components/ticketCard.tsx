@@ -25,8 +25,6 @@ interface ICreateOrUpdate {
     };
 }
 
-
-
 const TicketForm: React.FC<ICreateOrUpdate> = (props) => {
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 

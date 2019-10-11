@@ -7,15 +7,8 @@ import DisplayList from "./ticketCard";
 import CreatTicket from "./createOrUpdateTicketForm";
 import staticData from "../staticData/helpdeskTickets.json";
 import { BrowserRouter, Switch, Route, RouteComponentProps } from 'react-router-dom';
-
-// import {TicketCategory} from "./ticketCategoryOptions";
 initializeIcons();
 
-// interface ILoginProps  {
-
-// }
-interface ICreateOrUpdate {
-}
 
 interface IDetailProps extends RouteComponentProps<{ dashType: string }> {
     
@@ -23,8 +16,6 @@ interface IDetailProps extends RouteComponentProps<{ dashType: string }> {
 }
 
 const TicketForm: React.FC<IDetailProps> = (props) => {
-
-
 
     const [styleId, setStyleId] = useState<string>("");
     const { dashType } = props.match.params;

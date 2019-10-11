@@ -3,11 +3,6 @@ import { Nav, INavLink } from 'office-ui-fabric-react/lib/Nav';
 
 const NavMenu: React.FunctionComponent = () => {
 
-    // const _onLinkClick = (ev: React.MouseEvent<HTMLElement>, item?: INavLink) => {
-    //     if (item && item.name === 'News') {
-    //         alert('News link clicked');
-    //     }
-    // }
     return (
         <Nav
             onLinkClick={()=>console.log("Read")}

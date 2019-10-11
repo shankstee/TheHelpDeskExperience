@@ -10,28 +10,17 @@ initializeIcons();
 interface ISignInOrLogin {
     buttonText: string;
     signingUp?: boolean;
-    // handleChange: (event: React.FormEvent<HTMLInputElement>) => void;
 }
-
-
-
-// export interface DetailsProps extends RouteComponentProps<{}> {}
 
 const SignUpForm: React.FC<ISignInOrLogin> = (props) => {
 
     const [userEmail, setUserEmail] = useState<string>("");
     const [userPassword, setPassword] = useState<string>("");
-    // const emailInputRef = useRef<HTMLInputElement>(null);
-
+    
     // useEffect(() => {
 
     // }, [])
 
-    // const login = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //     console.log(e.currentTarget.value)
-    //     // props.history.push()
-
-    // }
 
     // const _onChange = (ev: React.MouseEvent<HTMLElement>, checked: boolean) => {
     //     console.log('toggle is ' + (checked ? 'checked' : 'not checked'));
@@ -43,11 +32,8 @@ const SignUpForm: React.FC<ISignInOrLogin> = (props) => {
                 <Stack>
                     {/* <input className="ms-TextField-field" onChange={e=>setUserEmail(e.target.value)}/> */}
                     <TextField
-
-                        // onChange={e=>setUserEmail(e.target.value)}
                         className="loginOrSignUpInput"
                         label="E-mail"
-                        // value={userEmail}
                         description="Please provide a valid E-mail"
                         iconProps={{ iconName: 'NewMail' }}
                     

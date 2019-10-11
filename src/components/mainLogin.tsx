@@ -3,20 +3,7 @@ import LoginOrSignUp from "./loginOrSignUpParent";
 import CreateOrUpdateTicketForm from "./createOrUpdateTicketForm";
 import Navbar from "./navbar";
 
-// export interface IUser {
-//     email: string;
-//     password: string;
-// }
-
-// const initState: IUser = {
-//     email: "",
-//     password: ""
-// }
-interface ILoginProps {
-    // buttonText: string;
-}
-
-const MainComponent: React.FC<ILoginProps> = props => {
+const MainComponent: React.FC = props => {
 
     return (
         <div>

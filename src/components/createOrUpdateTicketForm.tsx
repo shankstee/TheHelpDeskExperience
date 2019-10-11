@@ -17,11 +17,6 @@ interface ICreateOrUpdate {
 
 const TicketForm: React.FC<ICreateOrUpdate> = (props) => {
 
-    // const [userEmail, setEmail] = useState<string>("");
-    // const [userPassword, setPassword] = useState<string>("");
-    // const emailInputRef = useRef<HTMLInputElement>(null);
-
-
 
     return (
         <React.Fragment>

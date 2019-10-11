@@ -15,11 +15,6 @@ const LoginPage: React.FC<ILoginProps> = (props) => {
     const [signUpBoolean, setSignUp] = useState<boolean>(false);
     const [loginBoolean, setLogin] = useState<boolean>(false);
 
-    // const login = () => {
-
-    // }
-
-
 
 
     return (
