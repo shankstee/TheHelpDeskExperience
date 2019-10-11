@@ -56,7 +56,7 @@ const SignUpForm: React.FC<ISignInOrLogin> = (props) => {
                         iconProps={{ iconName: 'AuthenticatorApp' }}
                     />
 
-                    {props.signingUp ? <Toggle label="Account Type:" inlineLabel onText="Helpdesk user" offText="Team member" onChange={() => _onChange} /> : null}
+                    {props.signingUp ? <Toggle label="Account Type:" inlineLabel onText="Team Member" offText="Helpdesk User" onChange={() => _onChange} /> : null}
                     <div className="submitButtonDiv">
                         <Link to="/tickets"><PrimaryButton id="submitSignUp" text={props.buttonText} /></Link>
 

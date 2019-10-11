@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { DefaultButton, PrimaryButton, TextField, Stack, initializeIcons, ITextFieldProps, Dropdown } from 'office-ui-fabric-react';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import NavMenu from "./sideNavMenu";
+import Navbar from "./navbar";
 // import {TicketCategory} from "./ticketCategoryOptions";
 initializeIcons();
 
@@ -23,6 +24,7 @@ const TicketForm: React.FC<ICreateOrUpdate> = (props) => {
 
     return (
         <React.Fragment>
+            <Navbar/>
             <div className="mainDashboardDiv">
                 <NavMenu />
                 <div id="dashboardMain">

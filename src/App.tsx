@@ -1,5 +1,5 @@
 import React from 'react';
-import MainComponent from './components/mainLogin';
+import LoginOrSignUp from './components/loginOrSignUpParent';
 import CreateOrUpdateTicketForm from './components/createOrUpdateTicketForm';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 // import logo from './logo.svg';
@@ -15,7 +15,7 @@ const App: React.FC<IAppProps> = props => {
   return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={MainComponent} />
+          <Route exact path="/" component={LoginOrSignUp} />
           <Route exact path="/tickets" component={CreateOrUpdateTicketForm}/>
         </Switch>
       </BrowserRouter>

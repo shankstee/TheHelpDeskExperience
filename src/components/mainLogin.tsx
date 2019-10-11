@@ -1,6 +1,7 @@
 import * as React from "react";
 import LoginOrSignUp from "./loginOrSignUpParent";
 import CreateOrUpdateTicketForm from "./createOrUpdateTicketForm";
+import Navbar from "./navbar";
 
 // export interface IUser {
 //     email: string;
@@ -19,7 +20,6 @@ const MainComponent: React.FC<ILoginProps> = props => {
 
     return (
         <div>
-            
             <LoginOrSignUp />
         </div>
     )
