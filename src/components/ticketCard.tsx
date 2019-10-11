@@ -65,7 +65,7 @@ const TicketForm: React.FC<ICreateOrUpdate> = (props) => {
 
     return (
         <React.Fragment>
-            <Card  tokens={cardTokens} className="ticketCard">
+            <Card  tokens={cardTokens} className="ticketCard animated fadeInLeft">
                 <Card.Item>
                     <Persona text="Trae Shanks" secondaryText="Feb 2, 2019" />
                 </Card.Item>

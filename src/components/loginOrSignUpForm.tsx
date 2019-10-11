@@ -38,7 +38,7 @@ const SignUpForm: React.FC<ISignInOrLogin> = (props) => {
 
     return (
         <div>
-            <form>
+            <form className="animated pulse">
                 <Stack>
                     <TextField
                         className="loginOrSignUpInput"

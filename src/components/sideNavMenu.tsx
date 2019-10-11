@@ -53,7 +53,6 @@ const NavMenu: React.FunctionComponent = () => {
                             name: 'Delete ticket',
                             url: '/dashboard/deleteTicket',
                             key: 'key6',
-                            target: '_blank',
                             icon: "RemoveFromShoppingList"
                         },
                     ]
