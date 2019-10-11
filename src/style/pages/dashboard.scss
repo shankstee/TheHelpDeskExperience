@@ -6,17 +6,26 @@
 }
 
 .ticketCard {
-    margin: 17px 0;
+    margin: 17px;
+   
 }
 
 #dashboardMain{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    // justify-content: space-around;
     overflow-y: auto;
     width: 85vw;
-
 }
+#dashboardMainCreate{
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    // overflow-y: auto;
+    width: 85vw;
+}
+
+
 
 .cardButton {
     background-color:$darkPurple;

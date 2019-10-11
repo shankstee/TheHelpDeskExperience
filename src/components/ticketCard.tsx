@@ -14,6 +14,7 @@ initializeIcons();
 
 // }
 interface ICreateOrUpdate {
+    type: string;
 }
 
 
@@ -81,7 +82,7 @@ const TicketForm: React.FC<ICreateOrUpdate> = (props) => {
             </Text>
                 </Card.Section>
                 <Card.Section horizontal styles={footerCardSectionStyles} tokens={footerCardSectionTokens}>
-                <PrimaryButton className="cardButton" text={"Edit Ticket"} />
+                <PrimaryButton className="cardButton" text={props.type} />
                     {/* <Icon iconName="RedEye" styles={iconStyles} />
                     <Icon iconName="SingleBookmark" styles={iconStyles} />
                     <Stack.Item grow={1}>
