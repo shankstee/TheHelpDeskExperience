@@ -10,6 +10,7 @@ initializeIcons();
 
 // }
 interface ICreateOrUpdate {
+    type:  "Create" | "Update"
 }
 
 
@@ -24,41 +25,36 @@ const TicketForm: React.FC<ICreateOrUpdate> = (props) => {
 
     return (
         <React.Fragment>
-            <Navbar/>
-            <div className="mainDashboardDiv">
-                <NavMenu />
-                <div id="dashboardMain">
-                    <form>
-                        <Stack>
 
-                            <h1>Create New Support Ticket</h1>
-                            <div className="flexInputs">
-                                <TextField label="Subject" required />
-                                <TextField label="Department" required />
-                                <Dropdown
-                                    required
-                                    id="categoryDropdown"
-                                    placeholder="Select a category"
-                                    label="Category"
-                                    options={[
-                                        { key: 'A', text: 'Hardware' },
-                                        { key: 'B', text: 'Networking' },
-                                        { key: 'C', text: 'Software' },
-                                        { key: 'D', text: 'User Auth' },
-                                        { key: 'E', text: 'Other' }
-                                    ]}
-                                />
-                            </div>
-                            <TextField label="With auto adjusting height" multiline autoAdjustHeight />
-                            <div className="ticketButtonDiv">
-                                <PrimaryButton className="submitTicket" text={"Create Ticket"} />
-                            </div>
+            <form>
+                <Stack>
+                    <h1>Create New Support Ticket</h1>
+                    <div className="flexInputs">
+                        <TextField label="Subject" required />
+                        <TextField label="Department" required />
+                        <Dropdown
+                            required
+                            id="categoryDropdown"
+                            placeholder="Select a category"
+                            label="Category"
+                            options={[
+                                { key: 'A', text: 'Hardware' },
+                                { key: 'B', text: 'Networking' },
+                                { key: 'C', text: 'Software' },
+                                { key: 'D', text: 'User Auth' },
+                                { key: 'E', text: 'Other' }
+                            ]}
+                        />
+                    </div>
+                    <TextField label="With auto adjusting height" multiline autoAdjustHeight />
+                    <div className="ticketButtonDiv">
+                        <PrimaryButton className="submitTicket" text={props.type} />
+                    </div>
 
 
-                        </Stack>
-                    </form>
-                </div>
-            </div>
+                </Stack>
+            </form>
+
 
         </React.Fragment>
     )
