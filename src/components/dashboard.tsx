@@ -39,7 +39,7 @@ const TicketForm: React.FC<IDetailProps> = (props) => {
                         dashType === "ViewAll" ? 
 
                         staticData.map(item => {
-                            return <DisplayList type="Edit" userObj={item}/>
+                            return <DisplayList key={item.key} type="Edit" userObj={item}/>
                         })
                     : dashType === "createTicket" ? <CreatTicket type={"Create"}/> 
 
@@ -48,7 +48,7 @@ const TicketForm: React.FC<IDetailProps> = (props) => {
                     : dashType === "deleteTicket" ? 
                     
                     staticData.map(item => {
-                        return <DisplayList type="Delete" userObj={item}  />
+                        return <DisplayList key={item.key} type="Delete" userObj={item}  />
                     })
                     :
                     null

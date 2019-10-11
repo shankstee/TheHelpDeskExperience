@@ -1,5 +1,6 @@
 [
     {
+        "key": 1,
         "subject": "Unable to login",
         "department": "G1",
         "category": "Networking",
@@ -7,6 +8,7 @@
         "userName": "Trae Shanks"
     },
     {
+        "key": 2,
         "subject": "Unable to sign up",
         "department": "Front desk",
         "category": "User Auth",
@@ -14,6 +16,7 @@
         "userName": "Udy Sty"
     },
     {
+        "key": 3,
         "subject": "Broken desk",
         "department": "Software",
         "category": "Hardware",
@@ -21,6 +24,7 @@
         "userName": "Grahm Hoes"
     },
     {
+        "key": 4,
         "subject": "Unable to login",
         "department": "IT",
         "category": "Other",
@@ -28,6 +32,7 @@
         "userName": "Fred Immer"
     },
     {
+        "key": 5,
         "subject": "Internet speeds",
         "department": "CS",
         "category": "Networking",
@@ -35,6 +40,7 @@
         "userName": "Yun Ing"
     },
     {
+        "key": 6,
         "subject": "Second monitor",
         "department": "Webdev",
         "category": "Hardware",
@@ -42,6 +48,7 @@
         "userName": "Ern Ibby"
     },
     {
+        "key": 7,
         "subject": "Login issue",
         "department": "React",
         "category": "User Auth",
@@ -49,6 +56,7 @@
         "userName": "Cand Brox"
     },
     {
+        "key": 8,
         "subject": "Unable to connect",
         "department": "Back-end",
         "category": "Networking",
@@ -56,6 +64,7 @@
         "userName": "Wim Lun"
     },
     {
+        "key": 9,
         "subject": "Team email locked",
         "department": "Front desk",
         "category": "Software",
@@ -63,6 +72,7 @@
         "userName": "Ivy Vol"
     },
     {
+        "key": 10,
         "subject": "Cord broken",
         "department": "Networking",
         "category": "Other",
@@ -70,6 +80,7 @@
         "userName": "Mike Kng"
     },
     {
+        "key": 11,
         "subject": "Unable to login",
         "department": "Blockchain",
         "category": "Other",
@@ -77,6 +88,7 @@
         "userName": "Van Jan"
     },
     {
+        "key": 12,
         "subject": "Word Access",
         "department": "IT",
         "category": "Software",
