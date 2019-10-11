@@ -1,12 +1,29 @@
 .mainDashboardDiv {
-    @include flexCenter();
-    justify-content: flex-start;
+    display: flex;
+    justify-content: center;
+    height: 95.9vh;
     
+}
+
+.ticketCard {
+    margin: 17px 0;
 }
 
 #dashboardMain{
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow-y: auto;
     width: 85vw;
 
+}
+
+.cardButton {
+    background-color:$darkPurple;
+        
+    &:hover {
+        // opacity:0.7;
+        background-color: $hoverColor;
+        color: $textGray;
+    }
 }

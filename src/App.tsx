@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginOrSignUp from './components/loginOrSignUpParent';
-import CreateOrUpdateTicketForm from './components/createOrUpdateTicketForm';
+import Dashboard from './components/dashboard';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 // import logo from './logo.svg';
 import './style/main.scss';
@@ -16,7 +16,7 @@ const App: React.FC<IAppProps> = props => {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={LoginOrSignUp} />
-          <Route exact path="/tickets" component={CreateOrUpdateTicketForm}/>
+          <Route exact path="/tickets" component={Dashboard}/>
         </Switch>
       </BrowserRouter>
   );
