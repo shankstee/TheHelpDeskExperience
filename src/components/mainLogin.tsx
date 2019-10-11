@@ -11,25 +11,19 @@ import CreateOrUpdateTicketForm from "./createOrUpdateTicketForm";
 //     email: "",
 //     password: ""
 // }
-// interface ILoginProps  {
-//     buttonText: string;
-
-// }
-
-export default class MainLoginForm extends React.Component {
-    // constructor({}) {
-    //     super({});
-    //     // this.state = initState;
-    // }
-
-    public render() {
-        return (
-            <div>
-                <CreateOrUpdateTicketForm/>
-                {/* <LoginOrSignUp/> */}
-            </div>
-        )
-
-    }
-    
+interface ILoginProps {
+    // buttonText: string;
 }
+
+const MainComponent: React.FC<ILoginProps> = props => {
+
+    return (
+        <div>
+            
+            <LoginOrSignUp />
+        </div>
+    )
+
+}
+
+export default MainComponent;

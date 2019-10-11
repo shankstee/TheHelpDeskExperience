@@ -16,6 +16,14 @@ form {
     padding: 10px;
 }
 
+//Toggle account type style
+.pill-82 {
+    background-color: $darkPurple;
+    &:hover {
+        background-color: $darkPurple; 
+    }
+}
+
 
 @mixin flexCenter {
     display: flex;
@@ -31,6 +39,7 @@ form {
 
 @import "./pages/login";
 @import "./pages/tickets";
+@import "./pages/dashboard.scss"
 
 
 

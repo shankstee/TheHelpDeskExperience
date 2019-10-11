@@ -4,11 +4,19 @@ import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import LoginOrSignUpForm from "./loginOrSignUpForm";
 // import SignUpForm from "./signUpForm";
 
+interface ILoginProps {
+    // login: ()=>void;
+}
 
-const LoginPage: React.FC = (props) => {
+
+const LoginPage: React.FC<ILoginProps> = (props) => {
 
     const [signUpBoolean, setSignUp] = useState<boolean>(false);
     const [loginBoolean, setLogin] = useState<boolean>(false);
+
+    const login = () => {
+        
+    }
     
 
 
@@ -17,7 +25,7 @@ const LoginPage: React.FC = (props) => {
         <div className="mainDiv">
             {
                 signUpBoolean 
-                ? <LoginOrSignUpForm buttonText={"Sign Up"} /> 
+                ? <LoginOrSignUpForm buttonText={"Sign Up"} signingUp={true} /> 
                 : loginBoolean 
                 ? <LoginOrSignUpForm buttonText={"Login"}/> 
                 :  <div>
