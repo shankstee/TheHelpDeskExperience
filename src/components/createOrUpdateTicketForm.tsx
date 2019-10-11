@@ -26,7 +26,7 @@ const TicketForm: React.FC<ICreateOrUpdate> = (props) => {
     return (
         <React.Fragment>
 
-            <form>
+            <form className="animated fadeInUp">
                 <Stack>
                     <h1>Create New Support Ticket</h1>
                     <div className="flexInputs">
