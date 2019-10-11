@@ -7,14 +7,17 @@
         font-family: $mainFont;
         text-align: center;
         // text-decoration: underline;
-        margin-bottom: 4px;
+        margin-bottom: 10px;
     }
 }
 
 .buttonDiv {
     display: flex;
-    padding: 8px;
+    padding: 15px;
     width: 40vw;
+    
+    // border: solid $textGray 1px;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
 
     
 

@@ -15,9 +15,9 @@ const LoginPage: React.FC<ILoginProps> = (props) => {
     const [signUpBoolean, setSignUp] = useState<boolean>(false);
     const [loginBoolean, setLogin] = useState<boolean>(false);
 
-    const login = () => {
+    // const login = () => {
 
-    }
+    // }
 
 
 
@@ -33,7 +33,7 @@ const LoginPage: React.FC<ILoginProps> = (props) => {
                         : loginBoolean
                             ? <LoginOrSignUpForm buttonText={"Login"} />
                             : <div>
-                                <h1>Welcome to Help Desk App</h1>
+                                <h1>Please login or create an account</h1>
                                 <div className="buttonDiv">
                                     <PrimaryButton id="signUpButton" text="Sign Up" onClick={() => setSignUp(true)} />
                                     <DefaultButton id="loginButton" text="Login" onClick={() => setLogin(true)} />

@@ -27,8 +27,6 @@ const TicketForm: React.FC<IDetailProps> = (props) => {
 
 
     const [styleId, setStyleId] = useState<string>("");
-    // const [userPassword, setPassword] = useState<string>("");
-    // const emailInputRef = useRef<HTMLInputElement>(null);
     const { dashType } = props.match.params;
 
     useEffect(()=>{
@@ -40,8 +38,6 @@ const TicketForm: React.FC<IDetailProps> = (props) => {
         
     },[])
 
-
-
     return (
         <React.Fragment>
             <Navbar />
@@ -52,7 +48,7 @@ const TicketForm: React.FC<IDetailProps> = (props) => {
                         dashType === "ViewAll" ? 
 
                         staticData.map(item => {
-                            return <DisplayList type="Edit"/>
+                            return <DisplayList type="Edit" userObj={item}/>
                         })
                     : dashType === "createTicket" ? <CreatTicket type={"Create"}/> 
 
@@ -61,7 +57,7 @@ const TicketForm: React.FC<IDetailProps> = (props) => {
                     : dashType === "deleteTicket" ? 
                     
                     staticData.map(item => {
-                        return <DisplayList type="Delete" />
+                        return <DisplayList type="Delete" userObj={item}  />
                     })
                     :
                     null

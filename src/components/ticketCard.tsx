@@ -7,6 +7,7 @@ import Navbar from "./navbar";
 import DisplayList from "./ticketCard";
 import { FontWeights } from '@uifabric/styling';
 import {IIconStyles,ITextStyles} from 'office-ui-fabric-react';
+import {Link} from "react-router-dom";
 // import {TicketCategory} from "./ticketCategoryOptions";
 initializeIcons();
 
@@ -15,16 +16,18 @@ initializeIcons();
 // }
 interface ICreateOrUpdate {
     type: string;
+    userObj: {
+        "subject": string,
+        "department": string,
+        "category": string,
+        "comment": string,
+        "userName": string
+    };
 }
 
 
 
 const TicketForm: React.FC<ICreateOrUpdate> = (props) => {
-
-    // const [userEmail, setEmail] = useState<string>("");
-    // const [userPassword, setPassword] = useState<string>("");
-    // const emailInputRef = useRef<HTMLInputElement>(null);
-
     const cardTokens: ICardTokens = { childrenMargin: 12 };
 
     const siteTextStyles: ITextStyles = {
@@ -61,34 +64,26 @@ const TicketForm: React.FC<ICreateOrUpdate> = (props) => {
     const footerCardSectionTokens: ICardSectionTokens = { padding: '12px 0px 0px' };
     
 
+    const {subject, department, category, comment, userName} = props.userObj;
 
 
     return (
         <React.Fragment>
-            <Card  tokens={cardTokens} className="ticketCard animated fadeInLeft">
+            <Card  tokens={cardTokens} className="ticketCard animated fadeInLeft"  compact={false}>
                 <Card.Item>
-                    <Persona text="Trae Shanks" secondaryText="Feb 2, 2019" />
+                    <Persona text={userName} secondaryText="Feb 2, 2019" />
                 </Card.Item>
-                {/* <Card.Item fill>
-                    <Image src="https://placehold.it/256x144" width="100%" alt="Placeholder image." />
-                </Card.Item> */}
                 <Card.Section>
                     <Text variant="small" styles={siteTextStyles}>
-                        Network
+                        {category}
             </Text>
-                    <Text styles={descriptionTextStyles}>Contoso Denver expansion design marketing hero guidelines</Text>
+                    <Text styles={descriptionTextStyles}>{subject}</Text>
                     <Text variant="small" styles={helpfulTextStyles}>
-                        Is this recommendation helpful?
+                        {comment}
             </Text>
                 </Card.Section>
                 <Card.Section horizontal styles={footerCardSectionStyles} tokens={footerCardSectionTokens}>
                 <PrimaryButton className="cardButton" text={props.type} />
-                    {/* <Icon iconName="RedEye" styles={iconStyles} />
-                    <Icon iconName="SingleBookmark" styles={iconStyles} />
-                    <Stack.Item grow={1}>
-                        <span />
-                    </Stack.Item>
-                    <Icon iconName="MoreVertical" styles={iconStyles} /> */}
                 </Card.Section>
             </Card>
 

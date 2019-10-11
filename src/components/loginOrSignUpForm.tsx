@@ -19,44 +19,48 @@ interface ISignInOrLogin {
 
 const SignUpForm: React.FC<ISignInOrLogin> = (props) => {
 
-    const [userEmail, setEmail] = useState<string>("");
+    const [userEmail, setUserEmail] = useState<string>("");
     const [userPassword, setPassword] = useState<string>("");
     // const emailInputRef = useRef<HTMLInputElement>(null);
 
-    useEffect(() => {
+    // useEffect(() => {
 
-    }, [])
+    // }, [])
 
-    const login = () => {
-        // props.history.push()
+    // const login = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     console.log(e.currentTarget.value)
+    //     // props.history.push()
 
-    }
+    // }
 
-    const _onChange = (ev: React.MouseEvent<HTMLElement>, checked: boolean) => {
-        console.log('toggle is ' + (checked ? 'checked' : 'not checked'));
-    }
+    // const _onChange = (ev: React.MouseEvent<HTMLElement>, checked: boolean) => {
+    //     console.log('toggle is ' + (checked ? 'checked' : 'not checked'));
+    // }
 
     return (
         <div>
             <form className="animated pulse">
                 <Stack>
+                    {/* <input className="ms-TextField-field" onChange={e=>setUserEmail(e.target.value)}/> */}
                     <TextField
+
+                        // onChange={e=>setUserEmail(e.target.value)}
                         className="loginOrSignUpInput"
                         label="E-mail"
+                        // value={userEmail}
                         description="Please provide a valid E-mail"
                         iconProps={{ iconName: 'NewMail' }}
-                    // ref={emailInputRef}
-                    // onChange={}
-                    // onRenderDescription={this._onRenderDescription}
+                    
                     />
                     <TextField
                         className="loginOrSignUpInput"
                         label="Password"
                         description="Password must be 6-10 characters long & contain one capitol letter"
                         iconProps={{ iconName: 'AuthenticatorApp' }}
+                        type="password"
                     />
 
-                    {props.signingUp ? <Toggle label="Account Type:" inlineLabel onText="Team Member" offText="Helpdesk User" onChange={() => _onChange} /> : null}
+                    {props.signingUp ? <Toggle label="Account Type:" inlineLabel onText="Team Member" offText="Helpdesk User" onChange={()=>(ev: React.MouseEvent<HTMLElement>, checked: boolean) => {console.log('toggle is ' + (checked ? 'checked' : 'not checked'));}} /> : null}
                     <div className="submitButtonDiv">
                         <Link to="/dashboard/ViewAll"><PrimaryButton id="submitSignUp" text={props.buttonText} /></Link>
 

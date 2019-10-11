@@ -13,14 +13,22 @@ interface INavProps {
     // handleChange: (event: React.FormEvent<HTMLInputElement>) => void;
 }
 
+// interface IDetailProps extends React.Component<{dashType: string}> {
+    
+
+// }
+
 
 
 // export interface DetailsProps extends RouteComponentProps<{}> {}
 
-const Navbar: React.FC<INavProps> = (props) => {
+const Navbar: React.FC = (props) => {
 
     const [userEmail, setEmail] = useState<string>("");
     const [userPassword, setPassword] = useState<string>("");
+    const logout = () => {
+        
+    }
     // const emailInputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
@@ -33,7 +41,7 @@ const Navbar: React.FC<INavProps> = (props) => {
 
             <div id="navbarDiv">
                 <h3>The Helpdesk Experience</h3>
-                <h4>Logout</h4>
+            <Link to="/"> <h4>Logout</h4></Link>
             </div>
 
         </React.Fragment>
