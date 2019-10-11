@@ -23,7 +23,7 @@ const TicketForm: React.FC<ICreateOrUpdate> = (props) => {
 
             <form className="animated fadeInUp">
                 <Stack>
-                    <h1>Create New Support Ticket</h1>
+                    <h1>{props.type} Support Ticket</h1>
                     <div className="flexInputs">
                         <TextField label="Subject" required />
                         <TextField label="Department" required />
