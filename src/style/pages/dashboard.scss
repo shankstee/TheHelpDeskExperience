@@ -1,0 +1,12 @@
+.mainDashboardDiv {
+    @include flexCenter();
+    justify-content: flex-start;
+    
+}
+
+#dashboardMain{
+    display: flex;
+    justify-content: center;
+    width: 85vw;
+
+}
