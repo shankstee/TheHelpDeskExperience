@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/TheHelpDeskExperience/static/css/main.bcf231ce.chunk.css",
+    "main.js": "/TheHelpDeskExperience/static/js/main.356e2991.chunk.js",
+    "main.js.map": "/TheHelpDeskExperience/static/js/main.356e2991.chunk.js.map",
+    "runtime-main.js": "/TheHelpDeskExperience/static/js/runtime-main.b59cb563.js",
+    "runtime-main.js.map": "/TheHelpDeskExperience/static/js/runtime-main.b59cb563.js.map",
+    "static/js/2.244218c2.chunk.js": "/TheHelpDeskExperience/static/js/2.244218c2.chunk.js",
+    "static/js/2.244218c2.chunk.js.map": "/TheHelpDeskExperience/static/js/2.244218c2.chunk.js.map",
+    "index.html": "/TheHelpDeskExperience/index.html",
+    "precache-manifest.f9566584631d0a3eb54b87083c5e38a2.js": "/TheHelpDeskExperience/precache-manifest.f9566584631d0a3eb54b87083c5e38a2.js",
+    "service-worker.js": "/TheHelpDeskExperience/service-worker.js",
+    "static/css/main.bcf231ce.chunk.css.map": "/TheHelpDeskExperience/static/css/main.bcf231ce.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b59cb563.js",
+    "static/js/2.244218c2.chunk.js",
+    "static/css/main.bcf231ce.chunk.css",
+    "static/js/main.356e2991.chunk.js"
+  ]
+}
