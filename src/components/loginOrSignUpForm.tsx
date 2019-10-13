@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Toggle, DefaultButton, PrimaryButton, TextField, Stack, initializeIcons, ITextFieldProps } from 'office-ui-fabric-react';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { Link, RouteComponentProps } from "react-router-dom";
+import axios from "axios"
 initializeIcons();
 
 // interface ILoginProps  {
@@ -25,6 +26,20 @@ const SignUpForm: React.FC<ISignInOrLogin> = (props) => {
     // const _onChange = (ev: React.MouseEvent<HTMLElement>, checked: boolean) => {
     //     console.log('toggle is ' + (checked ? 'checked' : 'not checked'));
     // }
+
+    useEffect(() => {
+        // fetch('https://localhost:5001/api/user', {mode: 'no-cors'})
+        //     .then(response => response.json())
+        //     .then(response => console.log(response))
+        //     .catch(error => console.log(error))
+    axios.get('https://localhost:5001/api/user', {headers: {
+        "Access-Control-Allow-Origin": "http://localhost:5001"}}).then(data=>console.log(data));
+
+
+    }, []);
+
+
+
 
     return (
         <div>

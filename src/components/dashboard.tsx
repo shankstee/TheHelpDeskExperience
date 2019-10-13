@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { DefaultButton, PrimaryButton, TextField, Stack, initializeIcons, ITextFieldProps, Dropdown } from 'office-ui-fabric-react';
-import { Icon } from 'office-ui-fabric-react/lib/Icon';
+import { initializeIcons} from 'office-ui-fabric-react';
 import NavMenu from "./sideNavMenu";
 import Navbar from "./navbar";
 import DisplayList from "./ticketCard";
