@@ -15,14 +15,40 @@ interface ISignInOrLogin {
 
 const SignUpForm: React.FC<ISignInOrLogin> = (props) => {
 
-    const [userEmail, setUserEmail] = useState<string>();
+    const [userEmail, setUserEmail] = useState<string>("");
     const [userPassword, setPassword] = useState<string>("");
     const [userAccount, setAccountType] = useState<boolean>(false);
+
+
     const handleToggle = (e: any): void => {
         setAccountType(!userAccount)
-        console.log(userAccount);
-        
-        
+    }
+
+    const handleCreateOrLogin = () => {
+        console.log(userPassword)
+
+        fetch(`https://localhost:5001/api/user`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: userEmail,
+                password: userPassword,
+                accountType: userAccount
+            })
+        })
+            .then(response => response.json())
+            .then(body => {
+                console.log(body)
+                
+
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+
     }
 
     // useEffect(() => {
@@ -75,6 +101,8 @@ const SignUpForm: React.FC<ISignInOrLogin> = (props) => {
 
     const handleInputOnchange = (e: any): void => {
         const target = e.target as HTMLTextAreaElement;
+        console.log(target.name)
+        console.log(target.value)
         if (target.name === "userEmail") {
             setUserEmail(target.value)
         } else if (target.name === "password") {
@@ -104,13 +132,15 @@ const SignUpForm: React.FC<ISignInOrLogin> = (props) => {
                         label="Password"
                         description="Password must be 6-10 characters long & contain one capitol letter"
                         iconProps={{ iconName: 'AuthenticatorApp' }}
+                        onChange={handleInputOnchange}
                         name="password"
                         type="password"
                     />
 
                     {props.signingUp ? <Toggle label="Account Type:" inlineLabel onText="Team Member" offText="Helpdesk User" onChange={handleToggle} /> : null}
                     <div className="submitButtonDiv">
-                        <Link to="/dashboard/ViewAll"><PrimaryButton id="submitSignUp" text={props.buttonText} /></Link>
+                       <Link to="/dashboard/ViewAll"> <PrimaryButton id="submitSignUp" text={props.buttonText} onClick={handleCreateOrLogin}/></Link>
+                       
 
                     </div>
 
