@@ -10,6 +10,8 @@ This project is currently in progress, a link to the current status of this appl
 ## VIDEO WALK THROUGH OF CURRENT STATE OF APPLICATION:
 https://vimeo.com/user103941507/review/366169640/56663e2a5d
 
+#### Front end deployed to Heroku.com. Due to free account this link may take ~30 seconds to load.
+https://helpdesk-typscript-react.herokuapp.com/
 
 ## Screenshots
 ### Main page
