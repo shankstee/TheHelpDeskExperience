@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DefaultButton, PrimaryButton, TextField, Stack, initializeIcons, ITextFieldProps,  IDropdownOption ,Dropdown } from 'office-ui-fabric-react';
+import { DefaultButton, PrimaryButton, TextField, Stack, initializeIcons, ITextFieldProps, IDropdownOption, Dropdown } from 'office-ui-fabric-react';
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import NavMenu from "./sideNavMenu";
 import Navbar from "./navbar";
@@ -13,8 +13,6 @@ interface ICreateOrUpdate {
     type: "Create" | "Update"
 }
 
-
-
 const TicketForm: React.FC<ICreateOrUpdate> = (props) => {
 
     const [subject, setSubject] = useState<string>("");
@@ -23,48 +21,14 @@ const TicketForm: React.FC<ICreateOrUpdate> = (props) => {
     const [comment, setComment] = useState<string>("");
     const [userId, setUserId] = useState<number>(1);
 
-    
-
-
-
     const handleCreateTicket = () => {
-        let URL;
-        let method;
-        let body;
-
-        if(props.type === "Create"){
-            URL = `https://localhost:5001/api/ticket`
-            method = "POST"
-            body = JSON.stringify({
-                subject,
-                department,
-                category,
-                comment,
-                userId
-            })
-        } else {
-            URL = `https://localhost:5001/api/ticket/${userId}`
-            method ="PUT"
-            body = JSON.stringify({
-                id:userId,
-                subject,
-                department,
-                category,
-                comment,
-                userId
-            })
-        }
-
-        console.log(body)
-
-
-        fetch("https://localhost:5001/api/ticket/1", {
-            method: "PUT",
+        if (props.type === "Create") {
+            fetch("https://localhost:5001/api/ticket", {
+            method: "POST",
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                id:userId,
                 subject,
                 department,
                 category,
@@ -88,10 +52,13 @@ const TicketForm: React.FC<ICreateOrUpdate> = (props) => {
             });
     }
 
-    const handleDropdown = (e: any): void => {
-        const target = e.target as HTMLDivElement;
-        console.log(target)
-    }
+        }
+
+
+    // const handleDropdown = (e: any): void => {
+    //     const target = e.target as HTMLDivElement;
+    //     console.log(target)
+    // }
 
     const handleInputOnchange = (e: any): void => {
         const target = e.target as HTMLTextAreaElement;
@@ -106,23 +73,16 @@ const TicketForm: React.FC<ICreateOrUpdate> = (props) => {
                 setComment(target.value);
                 break;
         }
-        
-
-
     }
-
-
-
 
     return (
         <React.Fragment>
-
             <form className="animated fadeInUp">
                 <Stack>
                     <h1>{props.type} Support Ticket</h1>
                     <div className="flexInputs">
-                        <TextField label="Subject" required name="subject" onChange={handleInputOnchange} value={subject}/>
-                        <TextField label="Department" required name="department" onChange={handleInputOnchange} value={department}/>
+                        <TextField label="Subject" required name="subject" onChange={handleInputOnchange} value={subject} />
+                        <TextField label="Department" required name="department" onChange={handleInputOnchange} value={department} />
                         <Dropdown
                             required
                             id="categoryDropdown"
@@ -150,5 +110,4 @@ const TicketForm: React.FC<ICreateOrUpdate> = (props) => {
         </React.Fragment>
     )
 }
-
 export default TicketForm;

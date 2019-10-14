@@ -7,6 +7,10 @@ To branch out and challenge myself to create something with technologies I've ne
 ## Build status
 This project is currently in progress, a link to the current status of this application is below:
 
+## VIDEO WALK THROUGH OF CURRENT STATE OF APPLICATION:
+https://vimeo.com/user103941507/review/366169640/56663e2a5d
+
+
 ## Screenshots
 ### Main page
 ![Main Page](./readmeImages/mainpage.png)
@@ -41,8 +45,8 @@ This project is currently in progress, a link to the current status of this appl
 - [Entity Framework](https://docs.microsoft.com/en-us/ef/core/)
 - [Docker](https://www.docker.com/)
 
-### Back-End Repo: https://github.com/shankstee/helpDeskAPI
 
+### Back-End Repo: https://github.com/shankstee/helpDeskAPI
 
 ## Installation
 
@@ -52,9 +56,28 @@ To fully install this application you will need:
 - C# .NET CORE
 - MSSQL - On docker for Mac
 
+### User Stories: 
+User Story: As a User, I can log in and out of the system.
+User Story: As a Helpdesk User, I can create a support ticket.
+User Story: As a Helpdesk User, I can update my support tickets.
+User Story: As a Helpdesk User, I can view all of my support tickets.
+User Story: As a Helpdesk Team Member, I can view all support tickets.
+User Story: As a Helpdesk Team Member, I can update any support ticket.
+User Story: As a Helpdesk Team Member, I can delete any support ticket.
+
 
 ## API Routes
+- Users:
+https://localhost:5001/api/user - GET ALL USERS
+https://localhost:5001/api/user - POST NEW USER with req.body
+https://localhost:5001/api/user/`userId` - PUT/UPDATE A USER
+https://localhost:5001/api/user/`userId` - DELETE A USER
 
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
+- Tickets:
+https://localhost:5001/api/user - GET ALL TICKETS
+https://localhost:5001/api/ticket - POST NEW TICKET with req.body
+https://localhost:5001/api/ticket/`ticketId` - PUT/UPDATE A TICKET
+https://localhost:5001/api/ticket/`ticketId` - DELETE A TICKETS
+
 
 #### This application is still in progress and this readme is here to demonstrate the current state of this application. Please see video above for walk through.
