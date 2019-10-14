@@ -57,13 +57,13 @@ To fully install this application you will need:
 - MSSQL - On docker for Mac
 
 ### User Stories: 
-User Story: As a User, I can log in and out of the system.
-User Story: As a Helpdesk User, I can create a support ticket.
-User Story: As a Helpdesk User, I can update my support tickets.
-User Story: As a Helpdesk User, I can view all of my support tickets.
-User Story: As a Helpdesk Team Member, I can view all support tickets.
-User Story: As a Helpdesk Team Member, I can update any support ticket.
-User Story: As a Helpdesk Team Member, I can delete any support ticket.
+- User Story: As a User, I can log in and out of the system.
+- User Story: As a Helpdesk User, I can create a support ticket.
+- User Story: As a Helpdesk User, I can update my support tickets.
+- User Story: As a Helpdesk User, I can view all of my support tickets.
+- User Story: As a Helpdesk Team Member, I can view all support tickets.
+- User Story: As a Helpdesk Team Member, I can update any support ticket.
+- User Story: As a Helpdesk Team Member, I can delete any support ticket.
 
 
 ## API Routes
