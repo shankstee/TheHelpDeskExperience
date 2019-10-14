@@ -18,6 +18,7 @@ const TicketForm: React.FC<IDetailProps> = (props) => {
 
     const [styleId, setStyleId] = useState<string>("");
     const { dashType } = props.match.params;
+    const [ticketData, setTicketData] = useState<[]>()
 
     useEffect(()=>{
         if (dashType === "ViewAll" || dashType === "deleteTicket") {
@@ -25,6 +26,21 @@ const TicketForm: React.FC<IDetailProps> = (props) => {
         } else if (dashType === "createTicket" || dashType === "updateTicket") {
             setStyleId("dashboardMainCreate");
         } 
+        fetch("https://localhost:5001/api/ticket/", {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+            .then(response => response.json())
+            .then(body => {
+                console.log(body)
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+        
         
     },[])
 
