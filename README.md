@@ -67,17 +67,17 @@ To fully install this application you will need:
 
 
 ## API Routes
-- Users:
-https://localhost:5001/api/user - GET ALL USERS
-https://localhost:5001/api/user - POST NEW USER with req.body
-https://localhost:5001/api/user/`userId` - PUT/UPDATE A USER
-https://localhost:5001/api/user/`userId` - DELETE A USER
+#### Users:
+- https://localhost:5001/api/user - GET ALL USERS
+- https://localhost:5001/api/user - POST NEW USER with req.body
+- https://localhost:5001/api/user/`userId` - PUT/UPDATE A USER
+- https://localhost:5001/api/user/`userId` - DELETE A USER
 
-- Tickets:
-https://localhost:5001/api/user - GET ALL TICKETS
-https://localhost:5001/api/ticket - POST NEW TICKET with req.body
-https://localhost:5001/api/ticket/`ticketId` - PUT/UPDATE A TICKET
-https://localhost:5001/api/ticket/`ticketId` - DELETE A TICKETS
+#### Tickets:
+- https://localhost:5001/api/user - GET ALL TICKETS
+- https://localhost:5001/api/ticket - POST NEW TICKET with req.body
+- https://localhost:5001/api/ticket/`ticketId` - PUT/UPDATE A TICKET
+- https://localhost:5001/api/ticket/`ticketId` - DELETE A TICKETS
 
 
 #### This application is still in progress and this readme is here to demonstrate the current state of this application. Please see video above for walk through.
