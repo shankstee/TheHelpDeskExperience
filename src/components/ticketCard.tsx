@@ -1,93 +1,123 @@
-import React, { useState } from 'react';
-import { DefaultButton, PrimaryButton, TextField, Stack, initializeIcons, ITextFieldProps, Dropdown, Persona, Text, Image } from 'office-ui-fabric-react';
-import { Icon } from 'office-ui-fabric-react/lib/Icon';
-import { Card, ICardTokens, ICardSectionStyles, ICardSectionTokens } from '@uifabric/react-cards';
-import NavMenu from "./sideNavMenu";
-import Navbar from "./navbar";
-import DisplayList from "./ticketCard";
-import { FontWeights } from '@uifabric/styling';
-import {IIconStyles,ITextStyles} from 'office-ui-fabric-react';
-import {Link} from "react-router-dom";
-// import {TicketCategory} from "./ticketCategoryOptions";
-initializeIcons();
+import {
+  Avatar,
+  Badge,
+  Body1,
+  Button,
+  Caption1,
+  Card,
+  CardFooter,
+  CardHeader,
+  Menu,
+  MenuItemRadio,
+  MenuList,
+  MenuPopover,
+  MenuTrigger,
+  Subtitle2,
+  Text,
+} from "@fluentui/react-components";
+import { ChevronDownRegular, DeleteRegular, EditRegular } from "@fluentui/react-icons";
+import { relativeTime } from "../lib/format";
+import type { Session, Ticket, TicketStatus } from "../lib/types";
+import { STATUSES } from "../lib/types";
 
-// interface ILoginProps  {
+const statusColor: Record<TicketStatus, "brand" | "warning" | "success"> = {
+  New: "brand",
+  "In Progress": "warning",
+  Resolved: "success",
+};
 
-// }
-interface ICreateOrUpdate {
-    type: string;
-    userObj: {
-        "key": number,
-        "subject": string,
-        "department": string,
-        "category": string,
-        "comment": string,
-        "userName": string
-    };
+interface TicketCardProps {
+  ticket: Ticket;
+  session: Session;
+  index: number;
+  onEdit: (ticket: Ticket) => void;
+  onDelete: (ticket: Ticket) => void;
+  onStatusChange: (ticket: Ticket, status: TicketStatus) => void;
 }
 
-const TicketForm: React.FC<ICreateOrUpdate> = (props) => {
-    const cardTokens: ICardTokens = { childrenMargin: 12 };
+export default function TicketCard({
+  ticket,
+  session,
+  index,
+  onEdit,
+  onDelete,
+  onStatusChange,
+}: TicketCardProps) {
+  const isTeam = session.role === "team";
+  const isOwner = ticket.requesterId === session.userId;
 
-    const siteTextStyles: ITextStyles = {
-        root: {
-            color: '#025F52',
-            fontWeight: FontWeights.semibold
+  return (
+    <Card
+      className="rise"
+      style={{ animationDelay: `${Math.min(index, 8) * 40}ms` }}
+      role="article"
+    >
+      <CardHeader
+        image={<Avatar name={ticket.requesterName} color="colorful" />}
+        header={<Text weight="semibold">{ticket.requesterName}</Text>}
+        description={
+          <Caption1 style={{ color: "var(--colorNeutralForeground3)" }}>
+            {ticket.department} · {relativeTime(ticket.createdAt)}
+          </Caption1>
         }
-    };
-    const descriptionTextStyles: ITextStyles = {
-        root: {
-            color: '#333333',
-            fontWeight: FontWeights.semibold
-        }
-    };
-    const helpfulTextStyles: ITextStyles = {
-        root: {
-            color: '#333333',
-            fontWeight: FontWeights.regular
-        }
-    };
-    const iconStyles: IIconStyles = {
-        root: {
-            color: '#0078D4',
-            fontSize: 16,
-            fontWeight: FontWeights.regular
-        }
-    };
-    const footerCardSectionStyles: ICardSectionStyles = {
-        root: {
-            borderTop: '1px solid #F3F2F1'
-        }
-    };
+      />
 
-    const footerCardSectionTokens: ICardSectionTokens = { padding: '12px 0px 0px' };
-    
+      <div className="card-badges">
+        <Badge appearance="filled" color={statusColor[ticket.status]}>
+          {ticket.status}
+        </Badge>
+        <Badge appearance="outline" color="informative">
+          {ticket.category}
+        </Badge>
+      </div>
 
-    const {subject, department, category, comment, userName} = props.userObj;
+      <div>
+        <Subtitle2 as="h3" block style={{ margin: "0 0 4px" }}>
+          {ticket.subject}
+        </Subtitle2>
+        <Body1 block className="clamp-2" style={{ color: "var(--colorNeutralForeground2)" }}>
+          {ticket.comment}
+        </Body1>
+      </div>
 
-
-    return (
-        <React.Fragment>
-            <Card  tokens={cardTokens} className="ticketCard animated fadeInLeft"  compact={false}>
-                <Card.Item>
-                    <Persona text={userName} secondaryText="Feb 2, 2019" />
-                </Card.Item>
-                <Card.Section>
-                    <Text variant="small" styles={siteTextStyles}>
-                        {category}
-            </Text>
-                    <Text styles={descriptionTextStyles}>{subject}</Text>
-                    <Text variant="small" styles={helpfulTextStyles}>
-                        {comment}
-            </Text>
-                </Card.Section>
-                <Card.Section horizontal styles={footerCardSectionStyles} tokens={footerCardSectionTokens}>
-                <PrimaryButton className="cardButton" text={props.type} />
-                </Card.Section>
-            </Card>
-
-        </React.Fragment>
-    )
+      {(isTeam || isOwner) && (
+        <CardFooter>
+          <Button appearance="secondary" icon={<EditRegular />} onClick={() => onEdit(ticket)}>
+            Edit
+          </Button>
+          {isTeam && (
+            <>
+              <Menu
+                checkedValues={{ status: [ticket.status] }}
+                onCheckedValueChange={(_, data) =>
+                  onStatusChange(ticket, data.checkedItems[0] as TicketStatus)
+                }
+              >
+                <MenuTrigger disableButtonEnhancement>
+                  <Button appearance="subtle" icon={<ChevronDownRegular />} iconPosition="after">
+                    Status
+                  </Button>
+                </MenuTrigger>
+                <MenuPopover>
+                  <MenuList>
+                    {STATUSES.map((status) => (
+                      <MenuItemRadio key={status} name="status" value={status}>
+                        {status}
+                      </MenuItemRadio>
+                    ))}
+                  </MenuList>
+                </MenuPopover>
+              </Menu>
+              <Button
+                appearance="subtle"
+                icon={<DeleteRegular />}
+                aria-label={`Delete ticket: ${ticket.subject}`}
+                onClick={() => onDelete(ticket)}
+              />
+            </>
+          )}
+        </CardFooter>
+      )}
+    </Card>
+  );
 }
-
-export default TicketForm;

@@ -59,3 +59,9 @@ typings/
 
 # next.js build output
 .next
+
+# vite build output
+dist
+
+# macOS
+.DS_Store

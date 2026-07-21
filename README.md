@@ -1,85 +1,61 @@
-## TheHelpDeskExperience
-Built a Helpdesk support ticketing web application.
+# The Helpdesk Experience
 
-## Motivation
-To branch out and challenge myself to create something with technologies I've never used before. 
+A support ticketing web app — submit requests, track their status, and manage the whole queue.
 
-## Build status
-This project is currently in progress, a link to the current status of this application is below:
+**The short story:** this app was originally built in October 2019 as a take-home project for a
+Microsoft interview (React 16 + Office UI Fabric v7 on the front end, C#/ASP.NET + SQL Server +
+Docker on the back end — the original code is preserved in this repo's git history). In 2026 it was
+rebuilt on the modern version of that same stack. Same app, same flows, seven years of tooling
+later.
 
-## VIDEO WALK THROUGH OF CURRENT STATE OF APPLICATION:
-https://vimeo.com/user103941507/review/366169640/56663e2a5d
+## Stack — then and now
 
-#### Front end deployed to Heroku.com. Due to free account this link may take ~30 seconds to load.
-https://helpdesk-typscript-react.herokuapp.com/
+| 2019 | 2026 |
+| --- | --- |
+| create-react-app | Vite |
+| React 16 | React 19 |
+| TypeScript 3.6 | TypeScript 5 |
+| Office UI Fabric v7 | Fluent UI v9 (`@fluentui/react-components`) |
+| React Router v5 | React Router v8 |
+| C# / ASP.NET + MSSQL | In-browser demo store (localStorage) |
 
-## Screenshots
+The backend was replaced with a client-side data layer that mimics the original API: async CRUD
+with realistic latency, seeded demo tickets on first visit, and persistence in your browser's
+local storage. Every visitor gets their own private, durable copy of the data — nothing is sent
+to a server, and passwords are never stored.
+
+## Features
+
+- Sign in / create an account (demo auth — any credentials work), or use the one-click
+  **Demo as User** / **Demo as Team** entries
+- Role-based views: Helpdesk Users see and edit their own tickets; Team Members see the full
+  queue, change statuses, and delete tickets
+- Create and edit tickets in a side drawer with validation
+- Search, category, and status filters with live counts
+- Light/dark theme, loading skeletons, empty states, toasts, and motion
+- Reset demo data from the account menu at any time
+
+## Running it
+
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # production build (set HELPDESK_BASE=/some/path/ to host under a subpath)
+```
+
+## The 2019 original
+
+Screenshots of the original take-home submission:
+
 ### Main page
 ![Main Page](./readmeImages/mainpage.png)
-### Sign up page
+### Sign up
 ![Sign up page](./readmeImages/signup.png)
-### Login page
-![Login Page](./readmeImages/login.png)
-### Create ticket page
+### Create ticket
 ![Create ticket](./readmeImages/createTicket.png)
-### View tickets with edit option
+### View / edit tickets
 ![View or edit](./readmeImages/viewOrEdit.png)
-### After edit clicked page
-![Update page](./readmeImages/updateTicket.png)
-### Team member delete ticket view page
+### Team member delete view
 ![Delete tickets](./readmeImages/deleteTicket.png)
 
-## Tech/framework used
-
-<b>Used on the Front-End:</b>
-
-- [React.js](https://reactjs.org/docs/getting-started.html)
-- [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
-- [TypeScript](https://www.typescriptlang.org/index.html)
-- [Office UI Fabric](https://developer.microsoft.com/en-us/fabric#/)
-- [SCSS](https://sass-lang.com/)
-
-<b>Used on the Back-End:</b>
-
-- [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
-- [ASP.NET](https://docs.microsoft.com/en-us/aspnet/)
-- [Microsoft SQL](https://docs.microsoft.com/en-us/sql/?view=sql-server-ver15)
-- [Entity Framework](https://docs.microsoft.com/en-us/ef/core/)
-- [Docker](https://www.docker.com/)
-
-
-### Back-End Repo: https://github.com/shankstee/helpDeskAPI
-
-## Installation
-
-To fully install this application you will need:
-
-- NODE.JS/NPM
-- C# .NET CORE
-- MSSQL - On docker for Mac
-
-### User Stories: 
-- User Story: As a User, I can log in and out of the system.
-- User Story: As a Helpdesk User, I can create a support ticket.
-- User Story: As a Helpdesk User, I can update my support tickets.
-- User Story: As a Helpdesk User, I can view all of my support tickets.
-- User Story: As a Helpdesk Team Member, I can view all support tickets.
-- User Story: As a Helpdesk Team Member, I can update any support ticket.
-- User Story: As a Helpdesk Team Member, I can delete any support ticket.
-
-
-## API Routes
-#### Users:
-- https://localhost:5001/api/user - GET ALL USERS
-- https://localhost:5001/api/user - POST NEW USER with req.body
-- https://localhost:5001/api/user/`userId` - PUT/UPDATE A USER
-- https://localhost:5001/api/user/`userId` - DELETE A USER
-
-#### Tickets:
-- https://localhost:5001/api/user - GET ALL TICKETS
-- https://localhost:5001/api/ticket - POST NEW TICKET with req.body
-- https://localhost:5001/api/ticket/`ticketId` - PUT/UPDATE A TICKET
-- https://localhost:5001/api/ticket/`ticketId` - DELETE A TICKETS
-
-
-#### This application is still in progress and this readme is here to demonstrate the current state of this application. Please see video above for walk through.
+Original back-end repo: https://github.com/shankstee/helpDeskAPI
